@@ -1,0 +1,72 @@
+header.home {
+  padding-top: 15px;
+  position: absolute;
+  width: 100%;
+  z-index: 10000;
+}
+
+header div nav form a {
+  margin-right: 15px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: #f0f0f0;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+	color: #f0f0f0;
+}
+
+.btn-outline-secondary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #cbd3da;
+}
+
+section div.container-fluid {
+  height: 100vh;
+  background-image: url('http://localhost:3000/assets/bg-cover.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right 0 bottom 0;
+}
+
+section div.container-fluid div.row {
+  padding: 25vh;
+}
+
+section div.cover div.container {
+  padding-top: 13%;
+}
+
+section div.cover div.container div.input-group input.form-control {
+  border: 1px solid #fff;
+}
+
+section div.jumbotron-fluid {
+  min-height: 100%;
+  background-image: url('http://localhost:3000/assets/bg-about.jpg');
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: right 0 bottom 0;
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
+
+footer {
+  background-color: #f0f0f0;
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
