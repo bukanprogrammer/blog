@@ -1,0 +1,38 @@
+<header>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <%= image_tag('bp-logo.png', width: 50) %>
+      </a>
+      <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Home', root_path, class: 'nav-link', data: {turbolinks: false} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Blog', nil, class: 'nav-link', data: {turbolinks: false} %>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Kategori
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% 2.times do |category| %>
+                <%= link_to 'linux', nil, class: 'dropdown-item' %>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <%= link_to 'Masuk', nil, class: 'btn btn-outline-secondary' %>
+          <%= link_to 'Daftar', nil, class: 'btn btn-outline-secondary' %>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+
