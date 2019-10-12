@@ -1,4 +1,4 @@
-header.home {
+header {
   padding-top: 15px;
   position: absolute;
   width: 100%;
@@ -34,7 +34,7 @@ header div nav form a {
 
 section div.container-fluid {
   height: 100vh;
-  background-image: url('http://localhost:3000/assets/bg-cover.jpg');
+  background-image: url('http://localhost:3001/assets/bg-cover.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -56,7 +56,7 @@ section div.cover div.container div.input-group input.form-control {
 
 section div.jumbotron-fluid {
   min-height: 100%;
-  background-image: url('http://localhost:3000/assets/bg-about.jpg');
+  background-image: url('http://localhost:3001/assets/bg-about.jpg');
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
