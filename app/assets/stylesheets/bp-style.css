@@ -1,0 +1,9 @@
+header {
+  border-bottom: 1px solid lightgrey;
+}
+
+section {
+  height: 50vh;
+  min-height: 350px;
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
