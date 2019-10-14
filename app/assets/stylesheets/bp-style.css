@@ -3,7 +3,14 @@ header {
 }
 
 section {
-  height: 50vh;
-  min-height: 350px;
+  margin-top: 67px;
+  width: 100%;
+  min-height: 520px;
+  background-image: url('http://localhost:3001/assets/bp-home.jpg');
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
