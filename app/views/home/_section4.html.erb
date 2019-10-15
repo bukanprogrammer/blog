@@ -1,31 +1,18 @@
-<section class="jumbotron jumbotron-fluid mb-0">
-  <div class="container">    
+<section class="album py-3 bg-light">
+  <div class="container">
+    <h1 class="h3 my-4"><strong>Kumpulan error & cara mengatasinya</strong></h1>
     <div class="row">
-      <div class="col-md-12 mt-3 text-dark">
-        <h1 class="h3">Surat Kabar</h1>
-        <p class="mt-4">
-          Subscribe agar mendapatkan berita terbaru dari kami.
-        </p>
-        <form class="form-inline">
-          <div class="input-group mb-2 mr-2">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+      <ul class="list-unstyled">
+        <% 3.times do %>
+          <li class="media mt-4">
+            <%= image_tag('icon-ruby.png', class: 'mr-4') %>
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">List-based media object</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
             </div>
-            <input type="email" class="form-control" placeholder="Email">
-          </div>
-          <button type="submit" class="btn btn-danger mb-2">Subscribe</button>
-        </form>
-        <p class="mt-4">
-          Atau follow kami melalui:
-        </p>
-        <form class="form-inline">
-          <a class="text-danger h2" href=""><i class="fab fa-youtube"></i></a>
-          <a class="text-dark h2 ml-2" href=""><i class="fab fa-github"></i></a>
-          <a class="text-primary h2 ml-2" href=""><i class="fab fa-facebook"></i></a>
-          <a class="text-info h2 ml-2" href=""><i class="fab fa-twitter"></i></a>
-          <a class="text-warning h2 ml-2" href=""><i class="fab fa-instagram"></i></a>
-        </form>
-      </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </section>
