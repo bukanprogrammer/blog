@@ -2,7 +2,11 @@ header {
   border-bottom: 1px solid lightgrey;
 }
 
-section {
+main {
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
+
+section.bp-home {
   margin-top: 67px;
   width: 100%;
   min-height: 520px;
@@ -12,5 +16,13 @@ section {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
+
+a.btn-rounded {
+  border-radius: 50px;
+}
+
+footer {
   box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
