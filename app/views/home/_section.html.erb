@@ -1,11 +1,29 @@
-<section class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div class="col-md-6 offset-6 mt-5 text-white">
-      <h1 class="display-4">Bukan Programmer</h1>
-      <p class="lead">Belajar programming untuk investasi masa depan.</p>
-      <hr class="my-4">
-      <p>Cara terbaik belajar programming adalah segera memulainya.</p>
-      <a class="btn btn-danger btn-lg" href="#" role="button">Belajar sekarang</a>
+<main>
+  <section class="jumbotron jumbotron-fluid bp-home mb-0">
+    <div class="container">
+      <div class="col-md-6 offset-6 mt-5 text-white">
+        <h1 class="display-4">Bukan Programmer</h1>
+        <p class="lead">Belajar programming untuk investasi masa depan.</p>
+        <hr class="my-4">
+        <p>Cara terbaik belajar programming adalah dengan memulainya.</p>
+        <a class="btn btn-outline-light btn-lg btn-rounded" href="#" role="button">Belajar Sekarang!</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="album py-3 bg-light">
+    <div class="container">
+      <h1 class="h3 my-4">Belajar apa saja?</h1>
+      <div class="row">
+        <% 8.times do %>
+          <div class="col-md-3">
+            <div class="card mb-4 shadow-sm px-3 py-3">
+              <%= image_tag('icon-rails.png', class: 'bd-placeholder-img card-img-top') %>
+              <h1 class="h4 text-center mt-3">Ruby on Rails</h1>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>
