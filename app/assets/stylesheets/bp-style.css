@@ -19,10 +19,15 @@ section.bp-home {
   box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
 
+section {
+  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+}
+
 a.btn-rounded {
   border-radius: 50px;
 }
 
 footer {
+  border-top: 2px solid salmon;
   box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
