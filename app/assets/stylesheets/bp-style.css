@@ -6,6 +6,8 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+/* start of home style */
+
 section.bp-home {
   margin-top: 67px;
   width: 100%;
@@ -26,6 +28,26 @@ a.btn-rounded {
   border-radius: 50px;
 }
 
+/* end of home style */
+
+/* start of page style */
+
+section.bp-page {
+  margin-top: 67px;
+  width: 100%;
+  height: 350px;
+  background-image: url('http://localhost:3001/assets/bp-page.jpg');
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* end of page style */
+
 footer {
   border-top: 2px solid #6f00ff;
 }
+
+
