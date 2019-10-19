@@ -1,9 +1,9 @@
-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+body {
+  background-color: #f8f9fa !important;
 }
 
-main {
-  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 section.bp-home {
@@ -16,12 +16,10 @@ section.bp-home {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
 
 section.news-letter {
   background-color: #8f00ff;
-  box-shadow: inset rgba(3,27,78,.1)0 2px 4px 0;
 }
 
 a.btn-rounded {
