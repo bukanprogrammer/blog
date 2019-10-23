@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="blog-post">
-        <h1 class="blog-post-title h3"><%= @article.title %></h1>
-        <p class="blog-post-meta"><%= @article.created_at %></p>
+        <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
+        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh Dede Irwanto</p>
         <%= image_tag('bp-home.jpg', class: 'mb-4 img-thumbnail') %>
         <%= @article.content %>
       </div>
