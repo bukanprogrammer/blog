@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag('bp-favicon.ico') %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto&display=swap' %>
     <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css' %>
-    <%= favicon_link_tag('bp-favicon.ico') %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://cdn.tiny.cloud/1/9tfl7s1x316hbdjrvon6ea2dbf8c51nu42o2b5b8rmvtey1g/tinymce/5/tinymce.min.js' %>
+    <script>tinymce.init({selector:'textarea'});</script>
     <style>
       * {
         font-family: 'Roboto', sans-serif;
