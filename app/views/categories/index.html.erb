@@ -1,13 +1,29 @@
-<main class="shadow-sm">
-  <%= render 'global_section' %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <%= render 'index_section' %>
-      </div>
-      <div class="col-md-3">
-        <%= render 'layouts/global_sidebar' %>
-      </div>
-    </div>
-  </div>
-</main>
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image feature</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.image_feature %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>
