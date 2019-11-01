@@ -1,12 +1,13 @@
 <section class="album py-3 bg-white my-5 px-4 py-4 shadow-sm">
   <div class="container">
     <h1 class="h3 my-4"><strong><i class="blockquote-footer">Semua artikel</i></strong></h1>
+    <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm', data: {turbolinks: false} %>
     <div class="row">
       <% @articles.each do |a| %>
         <div class="col-md-4">
           <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
             <div class="card my-3 shadow-sm">
-              <%= image_tag('bp-home.jpg', class: 'card-img-top') %>
+              <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
               <div class="card-body">
                 <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
               </div>

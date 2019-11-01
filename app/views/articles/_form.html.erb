@@ -4,21 +4,40 @@
       <div class="blog-post col-md-12">
         <h1 class="blog-post-title h3 font-weight-bold">New Post</h1>
         <p class="blog-post-meta"></p>
-        <form>
+        <%= form_with(model: article, local: true) do |form| %>
+          <% if article.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+              <ul>
+                <% article.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: 'form-control' %>
           </div>
+
           <div class="form-group">
-            <label>Content</label>
-            <textarea class="form-control"></textarea>
+            <%= form.label :content %>
+            <%= form.text_area :content, class: 'form-control' %>
           </div>
+
           <div class="form-group">
-            <button class="btn btn-primary">Save</button>
+            <%= form.label :image_feature %>
+            <%= form.file_field :image_feature, class: 'form-control-file' %>
           </div>
-        </form>
+
+          <div class="form-group">
+            <%= form.submit 'Post Article', class: 'btn btn-primary' %>
+            <%= link_to 'Kembali', articles_path, class: 'btn btn-danger' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </section>
-
