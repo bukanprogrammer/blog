@@ -3,7 +3,4 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :articles
-
-  resources :errors, only: [:index]
-
 end
