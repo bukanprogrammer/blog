@@ -1,0 +1,16 @@
+<section class="album bg-white shadow-sm my-5 px-4 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="blog-post">
+        <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
+        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh Dede Irwanto</p>
+        <%= image_tag("#{@article.image_feature}", class: 'mb-4 img-thumbnail') %>
+        <%= @article.content %>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Back', articles_path %>
+</section>
+
+
