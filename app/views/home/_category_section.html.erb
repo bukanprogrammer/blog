@@ -2,15 +2,17 @@
   <div class="container">
     <h1 class="h3 my-4"><strong><i class="blockquote-footer">Belajar apa saja?</i></strong></h1>
     <div class="row">
-      <% 4.times do %>
+      <% @categories.each do |c| %>
         <div class="col-md-3">
-          <div class="card mb-4 shadow-sm px-3 py-3">
-            <%= image_tag('icon-rails.png', class: 'bd-placeholder-img card-img-top') %>
-            <h1 class="h4 text-center mt-3">Ruby on Rails</h1>
-          </div>
+          <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
+            <div class="card mb-4 shadow-sm px-3 py-3">
+              <%= image_tag("#{c.image_feature}", class: 'bd-placeholder-img card-img-top') %>
+              <h1 class="h4 text-center mt-3"><%= c.name %></h1>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-    <a class="btn btn-secondary btn-sm" href="">Selengkapnya...</a>
+    <%= link_to 'Selengkapnya...', categories_path, class: 'btn btn-dark btn-sm' %>
   </div>
 </section>
