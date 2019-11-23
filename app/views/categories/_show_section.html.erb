@@ -1,11 +1,22 @@
 <section class="album bg-white shadow-sm my-5 px-4 py-4">
   <div class="container">
     <div class="row">
-      <div class="blog-post">
-        <h1 class="blog-post-title h3 font-weight-bold"><%= @category.name %></h1>
-        <p class="blog-post-meta"><%= I18n.l(@category.created_at.to_date) %> Oleh Dede Irwanto</p>
-        <%= image_tag("#{@category.image_feature}", class: 'mb-4 img-thumbnail') %>
-      </div>
+      <h1 class="h3 my-4"><strong>Kategori '<%= @category.name %>'</strong></h1>
+      <% @articles.each do |a| %>
+        <div class="col-md-4">
+          <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
+            <div class="card my-3 shadow-sm">
+              <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
+              <div class="card-body">
+                <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted"><%= time_ago_in_words(a.created_at).capitalize %></small>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
   <%= link_to 'Edit', edit_category_path(@category) %> |

@@ -5,10 +5,12 @@
     <div class="row">
       <% @categories.each do |c| %>
         <div class="col-md-3">
-          <div class="card mb-4 shadow-sm px-3 py-3 my-3">
-            <%= image_tag("#{c.image_feature}", class: 'bd-placeholder-img card-img-top') %>
-            <h1 class="h4 text-center mt-3"><%= c.name.titleize %></h1>
-          </div>
+          <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
+            <div class="card mb-4 shadow-sm px-3 py-3 my-3">
+              <%= image_tag("#{c.image_feature}", class: 'bd-placeholder-img card-img-top') %>
+              <h1 class="h4 text-center mt-3"><%= c.name.titleize %></h1>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
