@@ -1,7 +1,9 @@
 <section class="album bg-white shadow-sm my-5 px-4 py-4">
   <div class="container">
     <div class="row">
-      <h1 class="h3 my-4"><strong>Kategori '<%= @category.name %>'</strong></h1>
+      <div class="col-md-12">
+        <h1 class="h3 my-4"><strong>Kategori '<%= @category.name %>'</strong></h1>
+      </div>
       <% @articles.each do |a| %>
         <div class="col-md-4">
           <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
@@ -19,8 +21,6 @@
       <% end %>
     </div>
   </div>
-  <%= link_to 'Edit', edit_category_path(@category) %> |
-  <%= link_to 'Back', categories_path %>
 </section>
 
 
