@@ -9,9 +9,13 @@ $(document).ready(function() {
 
   $( ".list-group-item" ).hover(
     function() {
-      $(this).addClass('bg-gradient-light shadow font-weight-bold').css('cursor', 'pointer'); 
+      $(this).addClass('bg-gradient-light shadow text-dark').css('cursor', 'pointer'); 
     }, function() {
-      $(this).removeClass('bg-gradient-light shadow font-weight-bold');
+      $(this).removeClass('bg-gradient-light shadow text-dark');
     }
   );
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 });
