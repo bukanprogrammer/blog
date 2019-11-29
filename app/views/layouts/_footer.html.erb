@@ -3,23 +3,26 @@
     <div class="row">
       <div class="col-sm-6">
         <h4 class="text-dark">Tentang kami</h4>
-        <p class="text-secondary text-justify">Bukan Programmer merupakan sebuah situs pembelajaran yang bertujuan untuk mengenalkan dunia Programming sebagai salah satu penunjang Revolusi Industri 4.0. <a href="">[Selengkapnya...]</a></p>
+        <p class="text-secondary text-justify"><b>Bukan Programmer</b> merupakan media pembelajaran berbasis web yang membahas topik - topik menarik seputar dunia IT. <%= link_to '[Selengkapnya...]', about_path, class: 'text-secondary' %></p>
       </div>
       <div class="col-sm-2">
         <h4 class="text-dark">Navigasi</h4>
-        <a class="text-secondary" href="">Artikel</a></br>
-        <a class="text-secondary" href="">Kategori</a></br>
-        <a class="text-secondary" href="">Tentang Kami</a></br>
-        <a class="text-secondary" href="">Ketentuan</a></br>
-        <a class="text-secondary" href="">Kebijakan</a>
+        <%= link_to 'Artikel', articles_path, class: 'text-secondary' %><br>
+        <%= link_to 'Kategori', categories_path, class: 'text-secondary' %><br>
+
+        <%= link_to 'Tentang Kami', about_path, class: 'text-secondary' %><br>
+
+        <%= link_to 'Ketentuan', terms_path, class: 'text-secondary' %><br>
+
+        <%= link_to 'Kebijakan', privacy_policy_path, class: 'text-secondary' %>
       </div>
       <div class="col-sm-4">
-        <h4 class="text-dark">Contact</h4>
-        <a href="mailto:admin@bukanprogrammer.com" class="text-secondary"><i class="fas fa-envelope"></i> admin[at]bukanprogrammer[dot]com</a></br>
+        <h4 class="text-dark">Kontak</h4>
+        <%= link_to 'id.bukanprogrammer@gmail.com', 'mailto:id.bukanprogrammer@gmail.com', class: 'text-secondary' %>
       </div>
       <div class="col-sm-12 text-center">
         <hr class="my-4">
-        <span class="text-secondary"><i class="far fa-copyright"></i> <%= Time.zone.now.year %></span> <a href="https://bukanprogrammer.com">Bukan Programmer</a><span class="text-secondary"> | Powered by: </span><a href="getbootstrap.com">Bootstrap</a>
+        <span class="text-secondary"><i class="far fa-copyright"></i> <%= Time.zone.now.year %></span> <a href="https://www.bukanprogrammer.com">Bukan Programmer</a><span class="text-secondary"> | Powered by: </span><a href="https://www.getbootstrap.com">Bootstrap</a>
       </div>
     </div>
   </div>
