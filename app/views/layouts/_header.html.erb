@@ -23,9 +23,9 @@
             Informasi
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Tentang Kami</a>
-            <a class="dropdown-item" href="#">Ketentuan</a>
-            <a class="dropdown-item" href="#">Kebijakan</a>
+            <%= link_to 'Tentang Kami', about_path, class: 'dropdown-item' %>
+            <%= link_to 'Ketentuan', terms_path, class: 'dropdown-item' %>
+            <%= link_to 'Kebijakan', privacy_policy_path, class: 'dropdown-item' %>
           </div>
         </li>
       </ul>
@@ -33,9 +33,9 @@
         <%= link_to "https://github.com/bukanprogrammer", class: 'text-dark h2 mr-3' do %>
           <i class="fab fa-github"></i>
         <% end %>
-        <%= link_to "https://youtube.com", class: 'text-danger h2' do %>
-          <i class="fab fa-youtube"></i>
-        <% end %>
+        <%# <%= link_to "https://youtube.com", class: 'text-danger h2' do %>
+        <%#   <i class="fab fa-youtube"></i>
+        <%# <% end %>
       </form>
     </div>
   </nav>
