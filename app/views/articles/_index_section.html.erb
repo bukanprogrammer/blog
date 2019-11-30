@@ -1,7 +1,9 @@
 <section class="album py-3 bg-white my-5 px-4 py-4 shadow-sm">
   <div class="container">
     <h1 class="h3 my-4"><strong class="text-dark">Semua artikel</strong></h1>
-    <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm', data: {turbolinks: false} %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm' %>
+    <% end %>
     <div class="row">
       <% @articles.each do |a| %>
         <div class="col-md-4">
