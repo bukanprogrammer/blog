@@ -1,6 +1,13 @@
-<h1>Editing Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<main class="shadow-sm">
+  <%= render 'global_section' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <%= render 'form', category: @category %>
+      </div>
+      <div class="col-md-3">
+        <%= render 'layouts/global_sidebar' %>
+      </div>
+    </div>
+  </div>
+</main>
