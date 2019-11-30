@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="h3 my-4"><strong>Kategori '<%= @category.name %>'</strong></h1>
+        <h1 class="h3 my-4"><strong class="text-dark">Kategori : <%= @category.name %></strong></h1>
       </div>
       <% @articles.each do |a| %>
         <div class="col-md-4">
@@ -15,11 +15,18 @@
               <div class="card-footer">
                 <small class="text-muted"><%= time_ago_in_words(a.created_at).capitalize %></small>
               </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+
+              </div>
+            <% end %>
+          </div>
+        <% end %>
     </div>
+
+    <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+    <%= link_to categories_path, class: 'btn btn-primary btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Kembali'} do %>
+      <i class="fas fa-arrow-left text-white"></i> Kembali
+    <% end %>
   </div>
 </section>
 

@@ -1,9 +1,10 @@
 <section class="album py-3 bg-white my-5 px-4 py-4 shadow-sm">
   <div class="container">
-    <h1 class="h3 my-4"><strong><i class="blockquote-footer">Semua kategori</i></strong></h1>
+    <h1 class="h3 my-4"><strong class="text-dark">Semua kategori</strong></h1>
     <%= link_to 'New Category', new_category_path, class: 'btn btn-primary btn-sm' %>
     <div class="row">
       <% @categories.each do |c| %>
+
         <div class="col-md-3">
           <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
             <div class="card mb-4 shadow-sm px-3 py-3 my-3">
@@ -12,6 +13,13 @@
               <small class="font-weight-bold text-center">(<%= c.articles_count %> Tulisan)</small>
             </div>
           <% end %>
+        <%= link_to edit_category_path(c), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
+          <i class="fas fa-edit text-white"></i>
+        <% end %>
+
+        <%= link_to category_path(c), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Apakah anda yakin akan menghapus?', toggle: 'tooltip', placement: 'top', title: 'Hapus'} do %>
+          <i class="fas fa-trash text-white"></i>
+        <% end %>
         </div>
       <% end %>
     </div>
