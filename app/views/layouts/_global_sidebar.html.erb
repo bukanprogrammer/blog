@@ -10,7 +10,7 @@
           </div>
           <%= form.email_field :email, class: 'form-control', placeholder: 'Email' %>
         </div>
-        <%= form.submit 'Subscribe', class: 'btn btn-danger mb-2', :onclick=>"if(!confirm('Apakah anda yakin akan mendaftarkan email ini sebagai subscriber?')){return false;}" %>
+        <%= form.submit 'Subscribe', class: 'btn btn-danger btn-sm mb-2', :onclick=>"if(!confirm('Apakah anda yakin akan mendaftarkan email ini sebagai subscriber?')){return false;}" %>
       </div>
     <% end %>
   </div>
