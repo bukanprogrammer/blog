@@ -7,13 +7,18 @@
         <%= form_with(model: article, local: true) do |form| %>
           <% if article.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+              <div class="fixed-top alert alert-danger alert-dismissible fade show " role="alert" id="notice">
+                <h2>Terjadi <%= pluralize(article.errors.count, "kesalahan")  %> saat menyimpan :</h2>
 
-              <ul>
-                <% article.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
+                <ul>
+                  <% article.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
             </div>
           <% end %>
 

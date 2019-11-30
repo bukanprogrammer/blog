@@ -1,6 +1,6 @@
 <section class="album py-3 bg-white my-5 px-4 py-4 shadow-sm">
   <div class="container">
-    <h1 class="h3 my-4"><strong><i class="blockquote-footer">Semua artikel</i></strong></h1>
+    <h1 class="h3 my-4"><strong class="text-dark">Semua artikel</strong></h1>
     <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm', data: {turbolinks: false} %>
     <div class="row">
       <% @articles.each do |a| %>
