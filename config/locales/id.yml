@@ -115,7 +115,7 @@ id:
       empty: tidak boleh kosong
       equal_to: harus sama dengan %{count}
       even: harus genap
-      exclusion: sudah digunakan
+      exclusion: sudah terdaftar
       greater_than: harus lebih besar dari %{count}
       greater_than_or_equal_to: harus sama atau lebih besar dari %{count}
       inclusion: tidak termasuk
@@ -129,7 +129,7 @@ id:
       other_than: harus selain %{count}
       present: harus kosong
       required: harus ada
-      taken: sudah digunakan
+      taken: sudah terdaftar
       too_long:
         one: terlalu panjang (maksimum 1 karakter)
         other: terlalu panjang (maksimum %{count} karakter)

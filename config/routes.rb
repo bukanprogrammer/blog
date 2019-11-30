@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  resources :subscribers, only: [:create]
+
   get :about, to: 'about#index'
 
   get :terms, to: 'terms#index'
