@@ -30,12 +30,24 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
+        <% if user_signed_in? %>
+          <ul class="navbar-nav mr-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> <%= current_user.name %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+                  <i class="fas fa-arrow-right"></i> Logout
+                <% end %>
+              </div>
+            </li>
+          </ul>
+        <% end %>
+
         <%= link_to "https://github.com/bukanprogrammer", class: 'text-dark h2 mr-3' do %>
           <i class="fab fa-github"></i>
         <% end %>
-        <%# <%= link_to "https://youtube.com", class: 'text-danger h2' do %>
-        <%#   <i class="fab fa-youtube"></i>
-        <%# <% end %>
       </form>
     </div>
   </nav>
