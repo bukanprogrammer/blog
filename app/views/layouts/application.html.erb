@@ -27,9 +27,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/notice' %>
+    <% if devise_controller? == false %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/notice' %>
+    <% end %>
+
     <%= yield %>
-    <%= render 'layouts/footer' %>
+
+    <% if devise_controller? == false %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
