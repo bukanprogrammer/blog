@@ -1,6 +1,22 @@
 <aside class="blog-sidebar text-secondary my-5">
   <div class="album bg-white shadow-sm my-4 py-3">
-    <div class="px-3"><h1 class="h4">- Artikel terbaru -</h1></div>
+    <div class="px-3"><h1 class="h4">Surat kabar</h1></div>
+    <hr class="mx-3">
+    <%= form_for newsletter do |form| %>
+      <div class="form-inline px-3">
+        <div class="input-group mb-2 mr-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+          </div>
+          <%= form.email_field :email, class: 'form-control', placeholder: 'Email' %>
+        </div>
+        <%= form.submit 'Subscribe', class: 'btn btn-danger mb-2', :onclick=>"if(!confirm('Apakah anda yakin akan mendaftarkan email ini sebagai subscriber?')){return false;}" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="album bg-white shadow-sm my-4 py-3">
+    <div class="px-3"><h1 class="h4">Artikel terbaru</h1></div>
     <hr class="mx-3">
     <ul class="list-group mx-3">
       <% recent_articles.each do |r| %>
@@ -14,7 +30,7 @@
   </div>
 
   <div class="album bg-white shadow-sm my-4 py-3">
-    <div class="px-3"><h1 class="h4">- Kategori -</h1></div>
+    <div class="px-3"><h1 class="h4">Kategori</h1></div>
     <hr class="mx-3">
     <ul class="list-group mx-3">
       <% categories.each do |c| %>
