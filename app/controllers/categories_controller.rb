@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @articles = Article.where("category_id = ?", @category.id)
+    @articles = Article.where("category_id = ?", @category.id).order(id: :desc).paginate(page: params[:page], per_page: 9)
   end
 
   # GET /categories/new
