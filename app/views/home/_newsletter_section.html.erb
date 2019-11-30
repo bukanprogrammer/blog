@@ -6,15 +6,17 @@
         <p class="mt-4">
           Subscribe agar mendapatkan berita terbaru dari kami.
         </p>
-        <form class="form-inline">
-          <div class="input-group mb-2 mr-2">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+        <%= form_for newsletter do |form| %>
+          <div class="form-inline">
+            <div class="input-group mb-2 mr-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+              </div>
+              <%= form.email_field :email, class: 'form-control', placeholder: 'Email' %>
             </div>
-            <input type="email" class="form-control" placeholder="Email">
+            <%= form.submit 'Subscribe', class: 'btn btn-danger mb-2', :onclick=>"if(!confirm('Apakah anda yakin akan mendaftarkan email ini sebagai subscriber?')){return false;}" %>
           </div>
-          <button type="submit" class="btn btn-danger mb-2">Subscribe</button>
-        </form>
+        <% end %>
         <p class="mt-4">
           Atau follow kami melalui:
         </p>
