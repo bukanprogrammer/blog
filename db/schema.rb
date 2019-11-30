@@ -10,27 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_052829) do
+ActiveRecord::Schema.define(version: 2019_11_30_042858) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.string "image_feature"
+    t.string "title", null: false
+    t.text "content", null: false
+    t.string "image_feature", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "category_id"
-    t.string "slug"
+    t.integer "category_id", null: false
+    t.string "slug", null: false
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "image_feature"
+    t.string "name", null: false
+    t.string "image_feature", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "articles_count"
-    t.string "slug"
+    t.integer "articles_count", null: false
+    t.string "slug", null: false
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "subscribers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
