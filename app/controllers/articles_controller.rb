@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 12).order(id: :desc)
+    @articles = Article.where(publish: :y).paginate(page: params[:page], per_page: 12).order(id: :desc)
   end
 
   # GET /articles/1
@@ -70,6 +70,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :image_feature, :category_id)
+      params.require(:article).permit(:title, :content, :image_feature, :category_id, :publish)
     end
 end
