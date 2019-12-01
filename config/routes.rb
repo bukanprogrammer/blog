@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   
   get :privacy_policy, to: 'privacy_policy#index'
 
+  namespace :admin do
+    resources :articles
+  end
+
 end
