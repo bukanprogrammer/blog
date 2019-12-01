@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_30_145304) do
+ActiveRecord::Schema.define(version: 2019_12_01_021745) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_145304) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id", null: false
     t.string "slug", null: false
+    t.column "publish", "enum('y','n')", default: "n", null: false
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
