@@ -24,4 +24,6 @@ $(document).ready(function() {
 					$(this).remove(); 
 			});
 	}, 2000);
+
+  $('#example').DataTable();
 });
