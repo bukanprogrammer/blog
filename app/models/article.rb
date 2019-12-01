@@ -10,4 +10,6 @@ class Article < ApplicationRecord
   validates :content, presence: true, length: {minimum: 100}
   validates :image_feature, presence: true
   validates :slug, presence: true
+
+  enum publish: {ya: 'y', tidak: 'n'}
 end
