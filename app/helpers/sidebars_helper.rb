@@ -4,7 +4,7 @@ module SidebarsHelper
   end
 
   def recent_articles
-    articles = Article.last(5)
+    articles = Article.where(publish: :y).last(5)
   end
 
   def categories
