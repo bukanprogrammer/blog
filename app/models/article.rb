@@ -6,6 +6,8 @@ class Article < ApplicationRecord
 
   belongs_to :category, counter_cache: true
 
+  belongs_to :user
+
   validates :title, presence: true, length: {maximum: 25}
   validates :content, presence: true, length: {minimum: 100}
   validates :image_feature, presence: true
