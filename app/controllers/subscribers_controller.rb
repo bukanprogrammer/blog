@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
         format.html { redirect_to root_path, notice: 'Anda telah menjadi subscriber' }
         format.json { render :show, status: :created, location: root_path }
       else
-        format.html { redirect_to root_path, notice: @subscriber.errors[:email].first  }
+        format.html { redirect_to root_path, alert: @subscriber.errors[:email].first  }
         format.json { render json: @subscriber.errors, status: :unprocessable_entity }
       end
     end
