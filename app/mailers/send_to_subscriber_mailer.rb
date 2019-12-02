@@ -1,0 +1,2 @@
+class SendToSubscriberMailer < ApplicationMailer
+end
