@@ -3,15 +3,15 @@
     <div class="row">
       <div class="blog-post">
         <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
-        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh Dede Irwanto</p>
+        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh <%= @article.user.name %></p>
         <%= image_tag("#{@article.image_feature}", class: 'mb-4 img-thumbnail') %>
         <p class="text-justify">
           <%= raw @article.content %>
         </p>
         <p class="mt-3">
           <small>
-            <i class="far fa-folder-open"></i> <%= @article.category.name %><br>
-            <i class="far fa-user"></i> Dede Irwanto
+            <i class="fas fa-folder-open"></i> <%= @article.category.name %><br>
+            <i class="fas fa-user-edit"></i> <%= @article.user.name %>
           </small>
         </p>
         <% if user_signed_in? %>
