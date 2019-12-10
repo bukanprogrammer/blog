@@ -4,7 +4,7 @@ class Article < ApplicationRecord
 
   mount_uploader :image_feature, ImageFeatureUploader
 
-  belongs_to :category, counter_cache: true
+  belongs_to :category
 
   belongs_to :user
 
@@ -13,5 +13,4 @@ class Article < ApplicationRecord
   validates :image_feature, presence: true
   validates :slug, presence: true
 
-  enum publish: {ya: 'y', tidak: 'n'}
 end
