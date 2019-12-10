@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.where(publish: :y).friendly.find(params[:id])
   end
 
   # GET /articles/new
@@ -29,9 +30,28 @@ class ArticlesController < ApplicationController
 
     @article.user = current_user
 
+    if @article.publish == 'y' && @article.send_to_subscribers == 'y'
+      @article.sent_to_subscribers = 'y'
+    end
+
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+
+        # Send new article to subscriber
+
+        row = @article
+
+        if @article.publish == 'y' && @article.send_to_subscribers == 'y'
+          email = Subscriber.all.map{|p| p.email}
+        else
+          email = ['id.dedeirwanto@gmail.com']
+        end 
+
+        ArticleMailer.send_request(row, email)
+
+        # end send new article
+
+        format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -44,12 +64,40 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+
+      if @article.sent_to_subscribers == 'n'
+        if @article.update(article_params)
+
+          # Send new article to subscriber
+
+          row = @article
+
+          if @article.publish == 'y' && @article.send_to_subscribers == 'y'
+            email = Subscriber.all.map{|p| p.email}
+            ArticleMailer.send_request(row, email)
+          else
+            email = ['id.dedeirwanto@gmail.com']
+            ArticleMailer.send_request(row, email)
+          end 
+
+          # end to send all subscriber
+         
+          format.html { redirect_to admin_article_path(@article),  notice: 'Article was successfully updated.' }
+          format.json { render :show, status: :ok, location: @article }
+        else
+          format.html { render :edit }
+          format.json { render json: @article.errors, status: :unprocessable_entity }
+        end
+
+      elsif @article.sent_to_subscribers == 'y'
+        if @article.update(article_params)
+
+          format.html { redirect_to admin_article_path(@article),  notice: 'Article was successfully updated.' }
+          format.json { render :show, status: :ok, location: @article }
+        else
+          format.html { render :edit }
+          format.json { render json: @article.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -72,6 +120,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :image_feature, :category_id, :publish, :user_id)
+      params.require(:article).permit(:title, :content, :image_feature, :category_id, :publish, :user_id, :send_to_subscribers, :sent_to_subscribers)
     end
 end
