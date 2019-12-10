@@ -1,2 +1,0 @@
-class SendToSubscriberMailer < ApplicationMailer
-end
