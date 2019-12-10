@@ -1,0 +1,24 @@
+<% if @item.publish == 'y' && @item.send_to_subscribers == 'y' %>
+  Hallo sahabat <b>Bukan Programmer</b>, ada artikel baru nih.<br>
+  Kuy diklik linknya... <br>
+
+  <%= link_to article_url(@item), article_url(@item) %>
+
+<% elsif @item.publish == 'y' && @item.send_to_subscribers == 'n' %>
+  Hallo admin, ada tulisan yang sudah di publish tapi belum dikirim ke subscribers nih...
+  <br>
+
+  <%= link_to article_url(@item), article_url(@item) %>
+
+<% elsif @item.publish == 'n' && @item.send_to_subscribers == 'y' %>
+  Hallo admin, ada tulisan yang status send_to_subscribers sudah y tapi belum dipublish nih...
+  <br>
+
+  <%= link_to article_url(@item), article_url(@item) %>
+
+<% else %>
+  Hallo admin, ada tulisan yang belum di publish nih...
+  <br>
+
+  <%= link_to article_url(@item), article_url(@item) %>
+<% end %>
