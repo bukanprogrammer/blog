@@ -37,7 +37,7 @@
         <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
           <li class="list-group-item d-flex justify-content-between align-items-center my-1">
             <%= c.name %>
-            <span class="badge badge-primary badge-pill"><%= c.articles_count %></span>
+            <span class="badge badge-primary badge-pill"><%= c.articles.count %></span>
           </li>
         <% end %>
       <% end %>

@@ -28,6 +28,30 @@
     });
     </script>
 
+    <script>
+      function sentToSubscribers() {
+        var publish_y = document.getElementById('article_publish_y');
+
+        var publish_n = document.getElementById('article_publish_n');
+
+        var send_to_subscribers = document.getElementById('send_to_subscribers');
+
+        var sent_to_subscribers = document.getElementById('sent_to_subscribers');
+
+        if(send_to_subscribers.checked == true) {
+          if(publish_y.checked == true && publish_n.checked == false) {
+            sent_to_subscribers.value = 'y';
+          } else {
+            sent_to_subscribers.value = 'n';
+          }
+        } else {
+          sent_to_subscribers.value = 'n';
+        }
+
+        console.log(sent_to_subscribers.value);
+      }
+    </script>
+
     <style>
       * {
         font-family: 'Quicksand', sans-serif;
