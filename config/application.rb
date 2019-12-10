@@ -16,5 +16,7 @@ module Weblog
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :id
+    config.action_mailer.default_url_options = { host: 'https://www.bukanprogrammer.com' }
+    config.web_console.whitelisted_ips = '10.0.2.2'
   end
 end
