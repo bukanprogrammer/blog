@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_111048) do
+ActiveRecord::Schema.define(version: 2019_12_09_135702) do
 
   create_table "ahoy_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "visit_id"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2019_12_02_111048) do
     t.string "slug", null: false
     t.column "publish", "enum('y','n')", default: "n", null: false
     t.integer "user_id", null: false
+    t.column "send_to_subscribers", "enum('y','n')", default: "n", null: false
+    t.column "sent_to_subscribers", "enum('y','n')", default: "n", null: false
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
@@ -71,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_111048) do
     t.string "image_feature", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "articles_count", null: false
     t.string "slug", null: false
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
