@@ -22,6 +22,7 @@
             </div>
           <% end %>
 
+
           <div class="form-group">
             <%= form.label :title %>
             <%= form.text_field :title, class: 'form-control' %>
@@ -48,26 +49,59 @@
 
           <div class="form-group">
             <%= form.label :publish, 'Publish tulisan?' %>
-            <div class="form-check">
-              <% if @article.publish == 'ya' %>
-                <%= form.radio_button :publish, 'y', class: 'form-check-input', checked: true  %>
-              <% else %>
-                <%= form.radio_button :publish, 'y', class: 'form-check-input' %>
-              <% end %>
-              <%= form.label :publish, 'Ya', class: 'form-check-label' %>
-            </div>
-            <div class="form-check">
-              <% if @article.publish == 'tidak' %>
-                <%= form.radio_button :publish, 'n', class: 'form-check-input', checked: true %>
-              <% else %>
-                <%= form.radio_button :publish, 'n', class: 'form-check-input' %>
-              <% end %>
-              <%= form.label :publish, 'Tidak', class: 'form-check-label' %>
-            </div>
+
+            <% if controller.action_name == 'edit' %>
+
+              <div class="form-check">
+                <% if @article.publish == 'y' %>
+
+                  <%= form.radio_button :publish, 'y', class: 'form-check-input', checked: true, onClick: "sentToSubscribers()"  %>
+
+                <% else %>
+
+                  <%= form.radio_button :publish, 'y', class: 'form-check-input', onClick: "sentToSubscribers()" %>
+
+                <% end %>
+
+                <%= form.label :publish, 'Ya', class: 'form-check-label' %>
+              </div>
+
+              <div class="form-check">
+                <% if @article.publish == 'n' %>
+
+                  <%= form.radio_button :publish, 'n', class: 'form-check-input', checked: true %>
+
+                <% else %>
+
+                  <%= form.radio_button :publish, 'n', class: 'form-check-input' %>
+
+                <% end %>
+
+                <%= form.label :publish, 'Tidak', class: 'form-check-label' %>
+              </div>
+
+            <% else %>
+              <div class="form-check">
+                  <%= form.radio_button :publish, 'y', class: 'form-check-input', onClick: "sentToSubscribers()" %>
+                  <%= form.label :publish, 'Ya', class: 'form-check-label' %>
+              </div>
+
+              <div class="form-check">
+                  <%= form.radio_button :publish, 'n', class: 'form-check-input', checked: true, onClick: "sentToSubscribers()" %>
+                  <%= form.label :publish, 'Tidak', class: 'form-check-label' %>
+              </div>
+            <% end %>
           </div>
 
+					<div class="form-group form-check">
+						<%= form.check_box("send_to_subscribers", { class: 'form-check-input', id: 'send_to_subscribers', onClick: "sentToSubscribers()" }, "y", "n")%>
+            <%= form.label :send_to_subscribers, class: 'form-check-label', id: 'send_to_subscribers' %>
+          </div>
+
+          <%= form.hidden_field(:sent_to_subscribers, id: 'sent_to_subscribers') %>
+
           <div class="form-group">
-            <%= form.submit 'Post', class: 'btn btn-primary btn-sm' %>
+            <%= form.submit 'Save', class: 'btn btn-primary btn-sm' %>
             <%= link_to 'Kembali', articles_path, class: 'btn btn-danger btn-sm' %>
           </div>
         <% end %>
