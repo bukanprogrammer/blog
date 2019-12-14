@@ -60,12 +60,10 @@ ActiveRecord::Schema.define(version: 2019_12_14_001220) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id", null: false
-    t.string "slug", null: false
     t.column "publish", "enum('y','n')", default: "n", null: false
     t.integer "user_id", null: false
     t.column "sent_to_subscribers", "enum('y','n')", default: "n", null: false
     t.column "send_to_subscribers", "enum('y','n')", default: "n", null: false
-    t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
