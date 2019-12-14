@@ -73,8 +73,6 @@ ActiveRecord::Schema.define(version: 2019_12_14_001220) do
     t.string "image_feature", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug", null: false
-    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "subscribers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
