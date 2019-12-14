@@ -6,6 +6,6 @@ class AddColumnSentToSubscribers < ActiveRecord::Migration[6.1]
   end
 
   def down
-    remove_column :articles, :send_to_subscribers
+    remove_column :articles, :sent_to_subscribers
   end
 end
