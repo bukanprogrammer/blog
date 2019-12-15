@@ -10,7 +10,7 @@
             <div class="card mb-4 shadow-sm px-3 py-3 my-3">
               <%= image_tag("#{c.image_feature}", class: 'bd-placeholder-img card-img-top') %>
               <h1 class="h4 text-center mt-3"><%= c.name.titleize %></h1>
-              <small class="font-weight-bold text-center">(<%= c.articles_count %> Tulisan)</small>
+              <small class="font-weight-bold text-center">(<%= c.articles.count %> Tulisan)</small>
             </div>
           <% end %>
         <%= link_to edit_category_path(c), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
