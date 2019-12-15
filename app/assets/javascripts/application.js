@@ -14,5 +14,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require bp-script
 //= require activestorage
 //= require_tree .

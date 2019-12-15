@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require blog
+ *= require bp-style
  */
 $enable-gradients: true;
 @import "bootstrap";
