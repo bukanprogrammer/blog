@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="home">
   <head>
     <title>Bukan Programmer - Tempat Belajar Programming</title>
     <%= csrf_meta_tags %>
@@ -71,5 +71,11 @@
     <% if devise_controller? == false %>
       <%= render 'layouts/footer' %>
     <% end %>
+
+    <div class="fixed-bottom" style="left: auto">
+      <%= link_to "#home", class: "btn btn-dark page-scroll m-4 backToTop" do %>
+        <i class="fas fa-arrow-up text-white"></i>
+      <% end %>
+    </div>
   </body>
 </html>
