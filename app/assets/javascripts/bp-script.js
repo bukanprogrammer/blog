@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  // card hover
   $( ".card" ).hover(
     function() {
       $(this).addClass('shadow').css('cursor', 'pointer'); 
@@ -15,16 +17,19 @@ $(document).ready(function() {
     }
   );
 
+  // tooltip
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
+  // auto hide notif
 	window.setTimeout(function() {
 			$(".alert").fadeTo(500, 0).slideUp(500, function(){
 					$(this).remove(); 
 			});
 	}, 2000);
 
+  // data table
 	$('#example').DataTable( {
 			responsive: {
 					details: {
@@ -40,5 +45,33 @@ $(document).ready(function() {
 					}
 			}
 	} );
+
+  // page scroll on click
+  $('.page-scroll').on('click', function(e) {
+
+    var href = $(this).attr('href');
+
+    var elemenTujuan = $(href);
+
+    $('#home').animate({
+      scrollTop: elemenTujuan.offset().top - 50
+    }, 1250, 'swing');
+    
+    e.preventDefault();
+  });
+
+  // hide back to top button
+
+  $('.backToTop').hide();
+
+  $(window).scroll(function() {
+    var y = $(this).scrollTop();
+
+    if(y <= $('.jumbotron').offset().top + 200) {
+      $('.backToTop').hide();
+    } else {
+      $('.backToTop').show();
+    }
+  });
 });
 
