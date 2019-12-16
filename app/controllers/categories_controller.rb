@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @articles = Article.where("category_id = ?", @category.id).order(id: :desc).paginate(page: params[:page], per_page: 9)
+    @articles = Article.friendly.where("category_id = ?", @category.id).order(id: :desc).paginate(page: params[:page], per_page: 9)
   end
 
   # GET /categories/new
@@ -66,7 +66,7 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
