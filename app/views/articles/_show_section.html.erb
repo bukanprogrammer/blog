@@ -11,7 +11,8 @@
         <p class="mt-3">
           <small>
             <i class="fas fa-folder-open"></i> <%= @article.category.name %><br>
-            <i class="fas fa-user-edit"></i> <%= @article.user.name %>
+            <i class="fas fa-user-edit"></i> <%= @article.user.name %><br>
+            <i class="fas fa-eye"></i> <%= @article.hits %> kali dilihat
           </small>
         </p>
         <% if user_signed_in? %>
