@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  # extend FriendlyId
-  # friendly_id :title, use: :slugged
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   mount_uploader :image_feature, ImageFeatureUploader
 
