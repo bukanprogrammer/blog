@@ -13,4 +13,6 @@ class Article < ApplicationRecord
   validates :image_feature, presence: true
   validates :slug, presence: true
 
+  acts_as_punchable
+
 end
