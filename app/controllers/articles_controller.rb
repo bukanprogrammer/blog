@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.friendly.where(publish: :y).find(params[:id])
+
+    @article.punch(request)
   end
 
   # GET /articles/new
