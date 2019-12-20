@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html id="home">
-  <head>
-    <title>Bukan Programmer - Tempat Belajar Programming</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= display_meta_tags %>
 
-    <%= favicon_link_tag('bp-favicon.ico') %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Quicksand&display=swap' %>
-    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css' %>
-    <%= stylesheet_link_tag    'https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css' %>
-    <%= stylesheet_link_tag    'https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css' %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Quicksand&display=swap' %>
+<%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css' %>
+<%= stylesheet_link_tag    'https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css' %>
+<%= stylesheet_link_tag    'https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js|https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js' %>
-    <%= javascript_include_tag 'https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js' %>
-    <%= javascript_include_tag 'https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js' %>
-    <%= javascript_include_tag 'https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js' %>
-    <%= javascript_include_tag 'https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js' %>
-    <%= javascript_include_tag 'https://cdn.tiny.cloud/1/9tfl7s1x316hbdjrvon6ea2dbf8c51nu42o2b5b8rmvtey1g/tinymce/5/tinymce.min.js' %>
-    <script>
-    tinymce.init({
-      selector: "textarea",  // change this value according to your HTML
-      plugins: "fullscreen code link advlist lists quickbars",
-      toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
-    });
-    </script>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js|https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js' %>
+<%= javascript_include_tag 'https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js' %>
+<%= javascript_include_tag 'https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js' %>
+<%= javascript_include_tag 'https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js' %>
+<%= javascript_include_tag 'https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js' %>
+<%= javascript_include_tag 'https://cdn.tiny.cloud/1/9tfl7s1x316hbdjrvon6ea2dbf8c51nu42o2b5b8rmvtey1g/tinymce/5/tinymce.min.js' %>
 
-    <script>
-      function sentToSubscribers() {
-        var publish_y = document.getElementById('article_publish_y');
+<script>
+tinymce.init({
+selector: "textarea",  // change this value according to your HTML
+plugins: "fullscreen code link advlist lists quickbars",
+toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
+});
+</script>
 
-        var publish_n = document.getElementById('article_publish_n');
+<script>
+function sentToSubscribers() {
+var publish_y = document.getElementById('article_publish_y');
 
-        var send_to_subscribers = document.getElementById('send_to_subscribers');
+var publish_n = document.getElementById('article_publish_n');
 
-        var sent_to_subscribers = document.getElementById('sent_to_subscribers');
+var send_to_subscribers = document.getElementById('send_to_subscribers');
 
-        if(send_to_subscribers.checked == true) {
-          if(publish_y.checked == true && publish_n.checked == false) {
-            sent_to_subscribers.value = 'y';
-          } else {
-            sent_to_subscribers.value = 'n';
-          }
-        } else {
-          sent_to_subscribers.value = 'n';
-        }
+var sent_to_subscribers = document.getElementById('sent_to_subscribers');
 
-        console.log(sent_to_subscribers.value);
-      }
-    </script>
+if(send_to_subscribers.checked == true) {
+if(publish_y.checked == true && publish_n.checked == false) {
+sent_to_subscribers.value = 'y';
+} else {
+sent_to_subscribers.value = 'n';
+}
+} else {
+sent_to_subscribers.value = 'n';
+}
 
-    <style>
-      * {
-        font-family: 'Quicksand', sans-serif;
-      }
-    </style>
-  </head>
+console.log(sent_to_subscribers.value);
+}
+</script>
 
-  <body>
-    <% if devise_controller? == false %>
-      <%= render 'layouts/header' %>
-    <% end %>
+<style>
+* {
+font-family: 'Quicksand', sans-serif;
+}
+</style>
+</head>
 
-    <%= render 'layouts/notice' %>
+<body style="background-color: #f3f3f3;">
+<% if devise_controller? == false %>
+  <%= render 'layouts/header' %>
+<% end %>
 
-    <%= yield %>
+<%= render 'layouts/notice' %>
 
-    <% if devise_controller? == false %>
-      <%= render 'layouts/footer' %>
-    <% end %>
+<%= yield %>
 
-    <div class="fixed-bottom" style="left: auto">
-      <%= link_to "#home", class: "btn btn-dark page-scroll m-4 backToTop" do %>
-        <i class="fas fa-arrow-up text-white"></i>
-      <% end %>
-    </div>
-  </body>
+<% if devise_controller? == false %>
+  <%= render 'layouts/footer' %>
+<% end %>
+
+<div class="fixed-bottom" style="left: auto">
+<%= link_to "#home", class: "btn btn-dark page-scroll m-4 backToTop" do %>
+<i class="fas fa-arrow-up text-white"></i>
+<% end %>
+</div>
+</body>
 </html>
