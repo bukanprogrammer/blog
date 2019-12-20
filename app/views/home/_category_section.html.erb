@@ -1,9 +1,9 @@
-<section class="album py-3 bg-white shadow-sm py-4" id="category">
+<section class="py-3" id="category">
   <div class="container">
-    <h1 class="h3 my-4"><strong><i class="blockquote-footer">Belajar apa saja?</i></strong></h1>
+    <h1 class="h3 my-4 font-weight-bold"><strong>Belajar apa saja?</strong></h1>
     <div class="row">
       <% @categories.each do |c| %>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
             <div class="card mb-4 shadow-sm px-3 py-3">
               <%= image_tag("#{c.image_feature}", class: 'bd-placeholder-img card-img-top') %>
@@ -14,6 +14,6 @@
         </div>
       <% end %>
     </div>
-    <%= link_to 'Selengkapnya...', categories_path, class: 'btn btn-dark btn-sm' %>
+    <%= link_to 'Selengkapnya...', categories_path, class: 'btn text-white font-weight-bold', style: 'background: linear-gradient(90deg,#5800e7,#e90000)' %>
   </div>
 </section>

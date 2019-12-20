@@ -1,21 +1,20 @@
-<section class="album bg-white shadow-sm my-5 py-3 px-3">
+<section class="my-4">
   <div class="container">
-    <h1 class="h3 my-4"><strong><i class="blockquote-footer">Artikel</i></strong></h1>
+    <h1 class="h2 mb-4 font-weight-bold"><strong>Artikel</strong></h1>
     <div class="row">
       <% @articles.each do |a| %>
-        <div class="col-md-4">
-          <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
-            <div class="card my-3 shadow-sm">
-              <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
+        <div class="card mb-3" style="max-width: 800px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= image_tag("#{a.image_feature}", class: 'card-img') %>
+            </div>
+            <div class="col-md-8">
               <div class="card-body">
-                <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted"><i class="fas fa-clock"></i> <%= time_ago_in_words(a.created_at).capitalize %></small></br>
-                <small class="text-muted"><i class="fas fa-user-edit"></i> <%= a.user.name %></small>
+                <h5 class="card-title"><%= a.title.titleize %></h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
       <% end %>
     </div>
