@@ -6,6 +6,15 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+
+    title = 'Kategori'
+    description = 'Kumpulan tulisan berdasarkan topik tertentu.'
+
+    prepare_meta_tags(title: title,
+                      description: description,
+                      og: {title: title, description: description },
+                      twitter: {title: title, description: description }
+                     )
   end
 
   # GET /categories/1
