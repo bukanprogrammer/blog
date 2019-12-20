@@ -3,17 +3,17 @@ $(document).ready(function() {
   // card hover
   $( ".card" ).hover(
     function() {
-      $(this).addClass('shadow').css('cursor', 'pointer'); 
+      $(this).addClass('shadow-sm').css('cursor', 'pointer'); 
     }, function() {
-      $(this).removeClass('shadow');
+      $(this).removeClass('shadow-sm');
     }
   );
 
   $( ".list-group-item" ).hover(
     function() {
-      $(this).addClass('bg-gradient-light shadow text-dark').css('cursor', 'pointer'); 
+      $(this).addClass('shadow-sm text-dark font-weight-bold').css('cursor', 'pointer'); 
     }, function() {
-      $(this).removeClass('bg-gradient-light shadow text-dark');
+      $(this).removeClass('shadow-sm text-dark font-weight-bold');
     }
   );
 
