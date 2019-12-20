@@ -6,14 +6,30 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.where(publish: :y).paginate(page: params[:page], per_page: 12).order(id: :desc)
+
+    title = 'Artikel'
+    description = 'Berisi tulisan-tulisan seputar teknoogi informasi.'
+
+    prepare_meta_tags(title: title,
+                      description: description,
+                      og: {title: title, description: description },
+                      twitter: {title: title, description: description }
+                     )
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+
     @article = Article.friendly.where(publish: :y).find(params[:id])
 
     @article.punch(request)
+
+    prepare_meta_tags(title: @article.title,
+                      description: @article.content,
+                      og: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content},
+                      twitter: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content, card: 'summary_large_image'},
+                     )
   end
 
   # GET /articles/new
