@@ -1,26 +1,31 @@
-<section class="album py-3 my-5 px-4 py-4 shadow-sm" style="background: linear-gradient(150deg, #5800e7, #e90000)">
+<section class="my-5">
   <div class="container">
-    <h1 class="h3 my-4"><strong class="text-white">Kumpulan Artikel</strong></h1>
     <% if user_signed_in? %>
       <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm' %>
     <% end %>
     <div class="row">
-      <% @articles.each do |a| %>
-        <div class="col-md-4">
-          <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
-            <div class="card my-3 shadow-sm">
-              <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
-              <div class="card-body">
-                <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
+      <% if @articles.count > 0 %>
+        <% @articles.each do |a| %>
+          <div class="col-md-3">
+            <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
+              <div class="card my-3 shadow-sm">
+                <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
+                <div class="card-body">
+                  <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted"><i class="fas fa-clock"></i> <%= time_ago_in_words(a.created_at).capitalize %></small></br>
+                  <small class="text-muted"><i class="fas fa-user-edit"></i> <%= a.user.name %></small></br>
+                  <small class="text-muted"><i class="fas fa-eye"></i> <%= a.hits %> kali dilihat</small>
+                  
+                </div>
               </div>
-              <div class="card-footer">
-                <small class="text-muted"><i class="fas fa-clock"></i> <%= time_ago_in_words(a.created_at).capitalize %></small></br>
-                <small class="text-muted"><i class="fas fa-user-edit"></i> <%= a.user.name %></small></br>
-                <small class="text-muted"><i class="fas fa-eye"></i> <%= a.hits %> kali dilihat</small>
-                
-              </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-md-12">
+          <h3 class="text-danger text-center">Pencarian tidak ditemukan</h3>
         </div>
       <% end %>
     </div>

@@ -1,15 +1,21 @@
-<section class="jumbotron jumbotron-fluid bp-page mb-0">
+<section class="jumbotron jumbotron-fluid bp-page mb-0" style="position: relative">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 offset-md-6 mt-5 text-white">
-        <h1 class="display-4">Artikel</h1>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control form-control-lg" placeholder="Cari tulisan">
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+      <div class="col-md-6 offset-md-3 mt-5 text-white text-center">
+        <h1 class="display-4 font-weight-bold">Artikel</h1>
+        <p class="lead">Tutorial bahasa Indoensia seputar programming.</p>
+        <form action="/search/articles">
+          <div class="input-group mb-3" style="z-index: 1">
+            <%= text_field_tag :search, nil, name: 'q', class: 'form-control form-control-lg', placeholder: 'Judul Artikel' %>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
+  </div>
+  <div class="pb-5" style="width: 100%">
+    <div class="cloud-img mb-0"></div>
   </div>
 </section>
