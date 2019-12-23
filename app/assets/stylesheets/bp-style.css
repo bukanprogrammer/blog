@@ -1,15 +1,43 @@
 header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-top: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  padding: 0 45px 0 45px;
+}
+
+header .fab {
+  color: rgba(255,255,255,.85);
+}
+
+header .fab:hover {
+  color: #fff;
+}
+
+header .navbar-light .navbar-toggler {
+  border-color: rgba(250, 250, 250, 0.5);
+}
+
+header .navbar-light .navbar-nav .nav-link:hover, header .navbar-light .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+
+header .navbar-light .navbar-nav .nav-link {
+  color: rgba(255,255,255,.85);
+  padding: 0 20px 0 20px;
+}
+
+header .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #fff;
 }
 
 /* start of home style */
 
 section.bp-home {
-  margin-top: 67px;
-  width: 100%;
-  min-height: 520px;
-  background: url(https://i.imgur.com/mARnU3i.png), linear-gradient(90deg,#5800e7,#e90000);
-  background-attachment: fixed;
+  position: relative;
+  min-width: 100%;
+  min-height: 600px;
+  background: url(http://localhost:3001/resources/images/bp-home.png), linear-gradient(90deg,#5800e7,#e90000);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,8 +45,17 @@ section.bp-home {
   background-size: cover;
 }
 
+.cloud-img {
+  min-width: 100%;
+  min-height: 200px;
+  position: absolute;
+  background: url(https://colorlib.com/preview/theme/hami/img/core-img/welcome-pattern.png);
+  bottom: -50px;
+}
+
 section.news-letter {
   background-color: #8f00ff;
+  position: relative;
 }
 
 a.btn-rounded {
@@ -30,10 +67,9 @@ a.btn-rounded {
 /* start of page style */
 
 section.bp-page {
-  margin-top: 67px;
   width: 100%;
   height: 350px;
-  background-image: url('https://i.imgur.com/Hm5J7S6.jpg');
+  background: url(http://localhost:3001/resources/images/bp-article.png), linear-gradient(90deg,#5800e7,#e90000);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -44,9 +80,41 @@ section.bp-page {
 /* end of page style */
 
 footer {
-  border-top: 2px solid #6f00ff;
+  border-top: 4px solid #8f00ff;
 }
 
 .backToTop {
   width: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    padding: 0 20px 0 20px;
+  }
+
+  header nav .navbar-collapse {
+    background: #fff;
+  }
+
+  header .navbar-light .navbar-nav .nav-link {
+    padding: 20px 20px 0 20px;
+    color: #727272;
+  }
+  
+  header .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #424242;
+  }
+
+  header .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #424242;
+  }
+
+  header .fab {
+    color: #727272;
+    margin: 20px 0 20px 20px;
+  }
+
+  header .fab:hover {
+    color: #424242;
+  }
 }
