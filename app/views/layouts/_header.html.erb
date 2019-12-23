@@ -1,32 +1,27 @@
-<header class="fixed-top shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white px-5">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">
-      <%= image_tag('bp-logo.png', height: 40) %>
+      <%= image_tag(request.base_url+'/resources/images/bp-logo.png', height: 40) %>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <!-- <span class="navbar&#45;toggler&#45;icon"></span> -->
+      <i class="fas fa-bars text-white m-1"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto px-3">
         <li class="nav-item">
-          <%= link_to root_path, class: 'nav-link' do %>
-            <i class="fas fa-home"></i> Home
-          <% end %>
+          <%= link_to 'Home', root_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to articles_path, class: 'nav-link' do %>
-            <i class="fas fa-newspaper"></i> Artikel
-          <% end %>
+          <%= link_to 'Artikel', articles_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to categories_path, class: 'nav-link' do %>
-            <i class="fas fa-folder"></i> Kategori
-          <% end %>
+          <%= link_to 'Kategori', categories_path, class: 'nav-link' %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-info-circle"></i> Informasi
+            Informasi
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Tentang Kami', about_path, class: 'dropdown-item' %>
@@ -35,7 +30,7 @@
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline ">
         <% if user_signed_in? %>
           <ul class="navbar-nav mr-3">
             <li class="nav-item dropdown">
@@ -59,8 +54,8 @@
           </ul>
         <% end %>
 
-        <%= link_to "https://github.com/bukanprogrammer", class: 'text-dark h2 mr-3', target: :_blank do %>
-          <i class="fab fa-github"></i>
+        <%= link_to "https://github.com/bukanprogrammer", class: 'mx-3', target: :_blank do %>
+          <i class="fab fa-github h4"><span class="h5"> Github</span></i>
         <% end %>
 
       </form>
