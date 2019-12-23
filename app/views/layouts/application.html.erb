@@ -22,61 +22,51 @@
 <%= javascript_include_tag 'https://cdn.tiny.cloud/1/9tfl7s1x316hbdjrvon6ea2dbf8c51nu42o2b5b8rmvtey1g/tinymce/5/tinymce.min.js' %>
 
 <script>
-tinymce.init({
-selector: "textarea",  // change this value according to your HTML
-plugins: "fullscreen code link advlist lists quickbars",
-toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
-});
-</script>
+  function sentToSubscribers() {
+    var publish_y = document.getElementById('article_publish_y');
 
-<script>
-function sentToSubscribers() {
-var publish_y = document.getElementById('article_publish_y');
+    var publish_n = document.getElementById('article_publish_n');
 
-var publish_n = document.getElementById('article_publish_n');
+    var send_to_subscribers = document.getElementById('send_to_subscribers');
 
-var send_to_subscribers = document.getElementById('send_to_subscribers');
+    var sent_to_subscribers = document.getElementById('sent_to_subscribers');
 
-var sent_to_subscribers = document.getElementById('sent_to_subscribers');
-
-if(send_to_subscribers.checked == true) {
-if(publish_y.checked == true && publish_n.checked == false) {
-sent_to_subscribers.value = 'y';
-} else {
-sent_to_subscribers.value = 'n';
-}
-} else {
-sent_to_subscribers.value = 'n';
-}
-
-console.log(sent_to_subscribers.value);
-}
+    if(send_to_subscribers.checked == true) {
+      if(publish_y.checked == true && publish_n.checked == false) {
+        sent_to_subscribers.value = 'y';
+      } else {
+        sent_to_subscribers.value = 'n';
+      }
+    } else {
+      sent_to_subscribers.value = 'n';
+    }
+  }
 </script>
 
 <style>
-* {
-font-family: 'Roboto', sans-serif;
-}
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
 </style>
 </head>
 
 <body>
-<% if devise_controller? == false %>
-  <%= render 'layouts/header' %>
-<% end %>
+  <% if devise_controller? == false %>
+    <%= render 'layouts/header' %>
+  <% end %>
 
-<%= render 'layouts/notice' %>
+  <%= render 'layouts/notice' %>
 
-<%= yield %>
+  <%= yield %>
 
-<% if devise_controller? == false %>
-  <%= render 'layouts/footer' %>
-<% end %>
+  <% if devise_controller? == false %>
+    <%= render 'layouts/footer' %>
+  <% end %>
 
-<div class="fixed-bottom" style="left: auto">
-  <%= link_to "#home", class: "btn page-scroll m-4 backToTop", style: 'background: linear-gradient(to right bottom, #5800e7, #e90000);border-radius: 50%' do %>
-<i class="fas fa-arrow-up text-white"></i>
-<% end %>
-</div>
+  <div class="fixed-bottom" style="left: auto">
+    <%= link_to "#home", class: "btn page-scroll m-4 backToTop", style: 'background: linear-gradient(to right bottom, #5800e7, #e90000);border-radius: 50%' do %>
+      <i class="fas fa-arrow-up text-white"></i>
+    <% end %>
+  </div>
 </body>
 </html>
