@@ -1,35 +1,24 @@
-<section class="album bg-white shadow-sm my-5 px-4 py-4">
+<section class="album bg-white shadow-sm my-3 pt-4 pb-5" style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h1 class="h3 my-4"><strong class="text-dark">Kategori : <%= @category.name %></strong></h1>
-      </div>
       <% @articles.each do |a| %>
-        <div class="col-md-4">
-          <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
-            <div class="card my-3 shadow-sm">
-              <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
-              <div class="card-body">
-                <h5 class="h3 font-weight-bold card-title"><%= a.title.titleize %></h5>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted"><i class="fas fa-clock"></i> <%= time_ago_in_words(a.created_at).capitalize %></small></br>
-                <small class="text-muted"><i class="fas fa-user-edit"></i> <%= a.user.name %></small></br>
-                <small class="text-muted"><i class="fas fa-eye"></i> <%= a.hits %> kali dilihat</small>
-                
-              </div>
-
+        <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
+          <div class="col-md-4">
+            <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
+              <div class="card h-100 my-3 shadow-sm">
+                <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
+                <div class="card-body">
+                  <small class="text-muted my-5"><%= time_ago_in_words(a.created_at).capitalize %></small>
+                  <h5 class="card-title"><%= a.title %></h5>
+                </div>
               </div>
             <% end %>
           </div>
         <% end %>
+      <% end %>
     </div>
 
     <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-
-    <%= link_to categories_path, class: 'btn btn-primary btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Kembali'} do %>
-      <i class="fas fa-arrow-left text-white"></i> Kembali
-    <% end %>
   </div>
 </section>
 
