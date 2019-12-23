@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
 
     title = 'Kategori'
-    description = 'Kumpulan tulisan berdasarkan topik tertentu.'
+    description = 'Kumpulan tutorial berdasarkan topik tertentu.'
 
     prepare_meta_tags(title: title,
                       description: description,
