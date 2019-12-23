@@ -1,21 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'home#index'
+  root 'pages#home'
+
+  get 'home', to: "pages#home"
+
+  get 'about', to: "pages#about"
+
+  get 'privacy_policy', to: "pages#privacy_policy"
+
+  get 'terms', to: "pages#terms"
+
+  get 'search/articles', to: "articles#search"
 
   resources :categories
 
   resources :articles
 
   resources :subscribers, only: [:create]
-
-  get :about, to: 'about#index'
-
-  get :terms, to: 'terms#index'
-  
-  get :privacy_policy, to: 'privacy_policy#index'
-
-  get 'search/articles', to: "articles#search"
 
   namespace :admin do
     resources :articles
