@@ -1,20 +1,24 @@
-<section class="album bg-white shadow-sm my-3 px-4 py-4" style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem">
+<section class="album bg-white shadow-sm my-3" style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem">
   <div class="container">
     <div class="row">
-      <div class="blog-post">
+      <%= image_tag("#{@article.image_feature}", class: 'mb-4 img-fluid') %>
+      <div class="m-4 blog-post">
+
         <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
-        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh <%= @article.user.name %></p>
-        <%= image_tag("#{@article.image_feature}", class: 'mb-4 img-thumbnail') %>
+
+        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh <%= link_to @article.user.name, 'https://www.facebook.com/dede.irwanto', class: 'text-decoration-none' %></p>
+
         <p class="text-justify">
           <%= raw @article.content %>
         </p>
-        <p class="mt-3">
+
+        <p>
           <small>
             <i class="fas fa-folder-open"></i> <%= @article.category.name %><br>
-            <i class="fas fa-user-edit"></i> <%= @article.user.name %><br>
             <i class="fas fa-eye"></i> <%= @article.hits %> kali dilihat
           </small>
         </p>
+
         <% if user_signed_in? %>
           <%= link_to edit_article_path(@article), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
             <i class="fas fa-edit text-white"></i>
