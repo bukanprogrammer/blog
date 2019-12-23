@@ -1,0 +1,19 @@
+<section class="jumbotron jumbotron-fluid bp-page mb-0" style="position: relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 offset-md-6 mt-5 text-white">
+        <% if controller.action_name == 'about' %>
+          <h1 class="display-4 font-weight-bold">Tentang Kami</h1>
+        <% elsif controller.action_name == 'privacy_policy' %>
+          <h1 class="display-5 font-weight-bold">Kebijakan Privasi</h1>
+        <% elsif controller.action_name == 'terms' %>
+          <h1 class="display-5 font-weight-bold">Syarat dan Ketentuan</h1>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="pb-5" style="width: 100%">
+    <div class="cloud-img mb-0"></div>
+  </div>
+</section>
+
