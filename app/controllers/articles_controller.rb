@@ -1,20 +1,29 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_article, only: [:edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.where(publish: :y).paginate(page: params[:page], per_page: 12).order(id: :desc)
+
+    @articles = Article.where(publish: :y)
+
+    @articles = @articles.paginate(page: params[:page], per_page: 12).order(id: :desc)
 
     title = 'Artikel'
-    description = 'Berisi tulisan-tulisan seputar teknoogi informasi.'
+    description = 'Tutorial bahasa Indonesia seputar programming'
 
     prepare_meta_tags(title: title,
                       description: description,
                       og: {title: title, description: description },
                       twitter: {title: title, description: description }
                      )
+  end
+
+  def search
+    @articles = Article.where(publish: :y).where('title LIKE?', "%#{params[:q]}%")
+
+    @articles = @articles.paginate(page: params[:page], per_page: 12).order(id: :desc)
   end
 
   # GET /articles/1
