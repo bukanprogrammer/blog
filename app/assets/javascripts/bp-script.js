@@ -61,9 +61,9 @@ $(document).on('turbolinks:load', function () {
   // card hover
   $( ".card" ).hover(
     function() {
-      $(this).addClass('shadow-sm').css('cursor', 'pointer'); 
+      $(this).addClass('shadow').css('cursor', 'pointer'); 
     }, function() {
-      $(this).removeClass('shadow-sm');
+      $(this).removeClass('shadow');
     }
   );
 
@@ -74,5 +74,11 @@ $(document).on('turbolinks:load', function () {
       $(this).removeClass('shadow-sm text-dark font-weight-bold');
     }
   );
+
+  tinymce.init({
+    selector: "textarea",  // change this value according to your HTML
+    plugins: "fullscreen code link advlist lists quickbars",
+    toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
+  });
 
 });
