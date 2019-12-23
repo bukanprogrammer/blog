@@ -13,5 +13,7 @@
  *= require_tree .
  *= require_self
  */
-$enable-gradients: true;
+$nprogress-color: linear-gradient(to right, #5800e7, #e90000);
+@import "nprogress";
+@import "nprogress-bootstrap";
 @import "bootstrap";
