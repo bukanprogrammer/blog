@@ -1,27 +1,4 @@
 $(document).ready(function() {
-
-  // card hover
-  $( ".card" ).hover(
-    function() {
-      $(this).addClass('shadow-sm').css('cursor', 'pointer'); 
-    }, function() {
-      $(this).removeClass('shadow-sm');
-    }
-  );
-
-  $( ".list-group-item" ).hover(
-    function() {
-      $(this).addClass('shadow-sm text-dark font-weight-bold').css('cursor', 'pointer'); 
-    }, function() {
-      $(this).removeClass('shadow-sm text-dark font-weight-bold');
-    }
-  );
-
-  // tooltip
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-
   // auto hide notif
 	window.setTimeout(function() {
 			$(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -46,6 +23,13 @@ $(document).ready(function() {
 			}
 	} );
 
+});
+
+$(document).on('turbolinks:load', function () {
+
+  // tooltip
+  $('[data-toggle="tooltip"]').tooltip()
+
   // page scroll on click
   $('.page-scroll').on('click', function(e) {
 
@@ -54,7 +38,7 @@ $(document).ready(function() {
     var elemenTujuan = $(href);
 
     $('#home').animate({
-      scrollTop: elemenTujuan.offset().top - 50
+      scrollTop: elemenTujuan.offset().top
     }, 1250, 'swing');
     
     e.preventDefault();
@@ -73,5 +57,22 @@ $(document).ready(function() {
       $('.backToTop').show();
     }
   });
-});
 
+  // card hover
+  $( ".card" ).hover(
+    function() {
+      $(this).addClass('shadow-sm').css('cursor', 'pointer'); 
+    }, function() {
+      $(this).removeClass('shadow-sm');
+    }
+  );
+
+  $( ".list-group-item" ).hover(
+    function() {
+      $(this).addClass('shadow-sm text-dark font-weight-bold').css('cursor', 'pointer'); 
+    }, function() {
+      $(this).removeClass('shadow-sm text-dark font-weight-bold');
+    }
+  );
+
+});
