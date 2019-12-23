@@ -8,7 +8,7 @@ class Article < ApplicationRecord
 
   belongs_to :user
 
-  validates :title, presence: true, length: {maximum: 25}
+  validates :title, presence: true, length: {maximum: 50}
   validates :content, presence: true, length: {minimum: 100}
   validates :image_feature, presence: true
   validates :slug, presence: true
