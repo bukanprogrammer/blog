@@ -85,6 +85,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    acts-as-taggable-on (6.5.0)
+      activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ahoy_matey (3.0.1)
@@ -308,6 +310,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 6.0)
   ahoy_matey
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
