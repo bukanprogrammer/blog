@@ -6,17 +6,20 @@
 
         <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
 
-        <p class="blog-post-meta"><%= I18n.l(@article.created_at.to_date) %> Oleh <%= link_to @article.user.name, 'https://www.facebook.com/dede.irwanto', class: 'text-decoration-none' %></p>
+        <p class="blog-post-meta">
+        <%= I18n.l(@article.created_at.to_date) %> Oleh <%= link_to @article.user.name, 'https://www.facebook.com/dede.irwanto', class: 'text-decoration-none' %>
+        </p>
 
         <p class="text-justify">
           <%= raw @article.content %>
         </p>
 
-        <p>
-          <small>
-            <i class="fas fa-folder-open"></i> <%= @article.category.name %><br>
-            <i class="fas fa-eye"></i> <%= @article.hits %> kali dilihat
-          </small>
+        <p class="blog-post-meta">
+          <i class="fas fa-eye"></i> <%= @article.hits %> kali dilihat
+        </p>
+
+        <p class="blog-post-meta">
+          <i class="fas fa-folder-open"></i> <%= @article.category.name %> | <i class="fas fa-tags"></i> <%= @article.all_tags %>
         </p>
 
         <% if user_signed_in? %>
