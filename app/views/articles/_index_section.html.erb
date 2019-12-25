@@ -1,7 +1,7 @@
 <section class="my-5">
   <div class="container">
     <% if user_signed_in? %>
-      <%= link_to 'New Article', new_article_path, class: 'btn btn-primary btn-sm' %>
+      <%= link_to 'New Article', new_admin_article_path, class: 'btn btn-primary btn-sm' %>
     <% end %>
     <div class="row">
       <% if @articles.count > 0 %>
