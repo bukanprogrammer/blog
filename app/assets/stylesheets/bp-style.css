@@ -2,7 +2,7 @@ header {
   margin-top: 20px;
   position: absolute;
   width: 100%;
-  z-index: 100;
+  z-index: 4;
   padding: 0 45px 0 45px;
 }
 
@@ -117,4 +117,17 @@ footer {
   header .fab:hover {
     color: #424242;
   }
+
+  .jumbotron .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .jumbotron .lead {
+    font-size: 1rem;
+  }
+
+  .jumbotron .jumbotron-sm {
+    font-size: 0.8rem;
+  }
+
 }
