@@ -1,16 +1,16 @@
 <main class="shadow-sm">
-  <%= render 'jumbotron_home' %>
-  <%= render 'category_home' %>
+  <%= render '../views/pages/home/jumbotron_section' %>
+  <%= render '../views/pages/home/category_section' %>
   <div class="container">
     <h1 class="h2 mt-3 font-weight-bold"><strong>Artikel</strong></h1>
     <div class="row">
       <div class="col-md-9">
-        <%= render 'article_home' %>
+        <%= render '../views/pages/home/article_section' %>
       </div>
       <div class="col-md-3">
         <%= render 'layouts/global_sidebar' %>
       </div>
     </div>
   </div>
-  <%= render 'newsletter_home' %>
+  <%= render '../views/pages/home/newsletter_section' %>
 </main>
