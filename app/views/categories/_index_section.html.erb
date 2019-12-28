@@ -5,25 +5,15 @@
     <% end %>
     <div class="row">
       <% @categories.each do |c| %>
-
-        <div class="col-md-3">
-          <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
-            <div class="card h-100 shadow-sm">
-              <%= image_tag("#{c.image_feature}", class: 'card-img-top') %>
-              <h1 class="h4 text-center mt-3"><%= c.name.titleize %></h1>
-              <small class="font-weight-bold text-center">(<%= c.articles.count %> Tulisan)</small>
-              <% if user_signed_in? %>
-                <%= link_to edit_category_path(c), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
-                  <i class="fas fa-edit text-white"></i>
-                <% end %>
-
-                <%= link_to category_path(c), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Apakah anda yakin akan menghapus?', toggle: 'tooltip', placement: 'top', title: 'Hapus'} do %>
-                  <i class="fas fa-trash text-white"></i>
-                <% end %>
-              <% end %>
+        <%= link_to category_path(c) do %>
+          <div class="card text-dark m-3 p-3" style="width: 15rem">
+            <%= image_tag("#{c.image_feature}", class: 'card-img', style: 'width: 100px; margin-left: 100px') %>
+            <div class="card-img-overlay">
+              <h5 class="card-title font-weight-bold"><%= c.name %></h5>
+              <p class="card-text"><%= c.articles.count %> Tulisan</p>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

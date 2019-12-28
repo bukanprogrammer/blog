@@ -1,15 +1,21 @@
-<section class="album bg-white shadow-sm my-3 pt-4 pb-5" style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem">
+<section class="album pt-3 pb-5">
   <div class="container">
     <div class="row">
       <% @articles.each do |a| %>
         <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
           <div class="col-md-4">
             <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
-              <div class="card h-100 my-3 shadow-sm">
+              <div class="card h-100 shadow-sm">
                 <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
                 <div class="card-body">
                   <small class="text-muted my-5"><%= time_ago_in_words(a.created_at).capitalize %></small>
                   <h5 class="card-title"><%= a.title %></h5>
+                </div>
+                <div class="card-footer">
+                  <small>
+                    <i class="fas fa-folder"></i> <%= a.category.name %><br>
+                    <i class="fas fa-tags"></i> <%= a.all_tags %>
+                  </small>
                 </div>
               </div>
             <% end %>
