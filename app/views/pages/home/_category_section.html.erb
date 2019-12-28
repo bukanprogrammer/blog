@@ -3,14 +3,15 @@
     <h1 class="h3 my-5 font-weight-bold"><strong>Belajar apa saja?</strong></h1>
     <div class="row">
       <% @categories.each do |c| %>
-        <div class="col-md-3">
-          <%= link_to category_path(c), class: 'text-decoration-none text-secondary' do %>
-            <div class="card h-100 mb-4 shadow-sm">
-              <%= image_tag("#{c.image_feature}", class: 'img-fluid bd-placeholder-img card-img-top') %>
-              <h1 class="h4 text-center"><%= c.name %></h1>
+        <%= link_to category_path(c) do %>
+          <div class="card text-dark m-3 p-3">
+            <%= image_tag("#{c.image_feature}", class: 'card-img', style: 'width: 100px; margin-left: 100px') %>
+            <div class="card-img-overlay">
+              <h5 class="card-title font-weight-bold"><%= c.name %></h5>
+              <p class="card-text"><%= c.articles.count %> Tulisan</p>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <%= link_to 'Selengkapnya...', categories_path, class: 'btn text-white font-weight-bold mt-3', style: 'background: linear-gradient(90deg,#5800e7,#e90000)' %>
