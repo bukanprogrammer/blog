@@ -11,7 +11,7 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title"><%= a.title.titleize %></h5>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <p class="card-text"><small class="text-muted"><%= time_ago_in_words(a.created_at).capitalize %></small></p>
                 </div>
               </div>
             </div>
