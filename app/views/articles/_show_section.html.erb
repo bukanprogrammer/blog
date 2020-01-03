@@ -14,16 +14,17 @@
           <%= raw @article.content %>
         </p>
 
+        <p class="blog-post-meta font-italic">
+          <span class="font-weight-bold">Artikel</span> ini telah dibaca sebanyak <%= @article.hits %> kali
+        </p>
+
         <p class="blog-post-meta">
+
           <i class="fas fa-tags"></i> <%= @article.all_tags %>
 
-          <span class="mx-2">~</span>
+          <span class="mx-2">|</span>
 
           <i class="fas fa-folder-open"></i> <%= @article.category.name %>
-
-          <span class="mx-2">~</span>
-
-          <i class="fas fa-eye"></i> <%= @article.hits %> kali
 
         </p>
 
