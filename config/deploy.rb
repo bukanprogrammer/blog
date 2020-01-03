@@ -25,7 +25,7 @@ set :deploy_to, "/home/bukanprogrammer/#{fetch :application}"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/resources/images/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 
 # Default value for default_env is {}
@@ -39,3 +39,6 @@ set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+task :symlink_config, roles: :app do
+  run "ln -nfs #{shared_path}/public/resources/images/uploads #{release_path}/public/resources/images/uploads"
+end
