@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
 
     prepare_meta_tags(title: @article.title,
                       description: @article.content,
+                      keywords: @article.tags.map{|t| t.name },
                       og: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content},
                       twitter: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content, card: 'summary_large_image'},
                      )
