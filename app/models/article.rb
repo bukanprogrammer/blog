@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  mount_uploader :image_feature, ImageFeatureUploader
+  has_one_attached :image
 
   belongs_to :category
 
@@ -14,8 +14,7 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, length: {maximum: 50}
   validates :content, presence: true, length: {minimum: 100}
-  validates :image_feature, presence: true
-  validates :slug, presence: true
+  validate :correct_image_type
 
   acts_as_punchable
 
@@ -31,6 +30,16 @@ class Article < ApplicationRecord
 
   def all_tags
     tags.map(&:name).join(", ")
+  end
+
+  private
+
+  def correct_image_type
+    if image.attached? && !image.content_type.in?(%w(image/jpeg image/jpg image/png))
+      errors.add(:image, 'Harus jpg atau png')
+    elsif image.attached? == false
+      errors.add(:image, 'Harus ada')
+    end
   end
 
 end
