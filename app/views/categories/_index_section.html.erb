@@ -7,7 +7,7 @@
       <% @categories.each do |c| %>
         <%= link_to category_path(c) do %>
           <div class="card text-dark m-3 p-3">
-            <%= image_tag("#{c.image_feature}", class: 'card-img', style: 'width: 100px; margin-left: 100px') %>
+            <%= image_tag(c.image, class: 'card-img', style: 'width: 100px; margin-left: 100px') %>
             <div class="card-img-overlay">
               <h5 class="card-title font-weight-bold"><%= c.name %></h5>
               <p class="card-text"><%= c.articles.count %> Tulisan</p>
