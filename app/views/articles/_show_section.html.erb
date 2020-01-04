@@ -1,42 +1,44 @@
 <section class="album bg-white shadow-sm my-3" style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem">
   <div class="container">
     <div class="row">
-      <%= image_tag("#{@article.image_feature}", class: 'mb-4 img-fluid') %>
-      <div class="m-4 blog-post">
+      <%= image_tag(@article.image, class: 'img-fluid') %>
+      <div class="col-md-12">
+        <div class="mt-4 blog-post">
 
-        <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
+          <h1 class="blog-post-title h3 font-weight-bold"><%= @article.title %></h1>
 
-        <p class="blog-post-meta">
-        <%= I18n.l(@article.created_at.to_date) %> Oleh <%= link_to @article.user.name, 'https://www.facebook.com/dede.irwanto', class: 'text-decoration-none' %>
-        </p>
+          <p class="blog-post-meta">
+          <%= I18n.l(@article.created_at.to_date) %> Oleh <%= link_to @article.user.name, 'https://www.facebook.com/dede.irwanto', class: 'text-decoration-none' %>
+          </p>
 
-        <p class="text-justify">
-          <%= raw @article.content %>
-        </p>
+          <p class="text-justify">
+            <%= raw @article.content %>
+          </p>
 
-        <p class="blog-post-meta font-italic">
-          <span class="font-weight-bold">Artikel</span> ini telah dibaca sebanyak <%= @article.hits %> kali
-        </p>
+          <p class="blog-post-meta font-italic">
+            <span class="font-weight-bold">Artikel</span> ini telah dibaca sebanyak <%= @article.hits %> kali
+          </p>
 
-        <p class="blog-post-meta">
+          <p class="blog-post-meta">
 
-          <i class="fas fa-tags"></i> <%= @article.all_tags %>
+            <i class="fas fa-tags"></i> <%= @article.all_tags %>
 
-          <span class="mx-2">|</span>
+            <span class="mx-2">|</span>
 
-          <i class="fas fa-folder-open"></i> <%= @article.category.name %>
+            <i class="fas fa-folder-open"></i> <%= @article.category.name %>
 
-        </p>
+          </p>
 
-        
-        <% if user_signed_in? %>
-          <%= link_to edit_article_path(@article), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
-            <i class="fas fa-edit text-white"></i>
+          
+          <% if user_signed_in? %>
+            <%= link_to edit_article_path(@article), class: 'btn btn-warning btn-sm', data: {toggle: 'tooltip', placement: 'top', title: 'Edit'} do %>
+              <i class="fas fa-edit text-white"></i>
+            <% end %>
+            <%= link_to article_path(@article), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Apakah anda yakin akan menghapus?', toggle: 'tooltip', placement: 'top', title: 'Hapus'} do %>
+              <i class="fas fa-trash text-white"></i>
+            <% end %>
           <% end %>
-          <%= link_to article_path(@article), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Apakah anda yakin akan menghapus?', toggle: 'tooltip', placement: 'top', title: 'Hapus'} do %>
-            <i class="fas fa-trash text-white"></i>
-          <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

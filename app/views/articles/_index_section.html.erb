@@ -9,7 +9,7 @@
           <div class="col-md-3 mt-3">
             <%= link_to article_path(a), class: 'text-decoration-none text-secondary' do %>
               <div class="card h-100 shadow-sm">
-                <%= image_tag("#{a.image_feature}", class: 'card-img-top') %>
+                <%= image_tag(a.image, class: 'card-img-top') %>
                 <div class="card-body">
                   <small class="text-muted my-5"><%= time_ago_in_words(a.created_at).capitalize %></small>
                   <h5 class="card-title"><%= a.title %></h5>
