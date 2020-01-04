@@ -7,13 +7,12 @@ class ApplicationController < ActionController::Base
     description = 'Bukan Programmer merupakan media pembelajaran berbasis web yang membahas topik - topik menarik seputar Teknologi Informasi.'
     current_url = request.url
     base_url = request.base_url
-    image = base_url + '/resources/images/bp-favicon.ico'
+    image = base_url + "/assets/bp-favicon.ico"
 
     defaults = {
       site: site_name,
       title: title,
       separator: '-',
-      icon: image,
       canoncial: base_url,
       author: 'Dede Irwanto',
       index: true,
