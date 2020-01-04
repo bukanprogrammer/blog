@@ -37,7 +37,7 @@ section.bp-home {
   position: relative;
   min-width: 100%;
   min-height: 600px;
-  background: url(https://www.bukanprogrammer.com/resources/images/bp-home.png), linear-gradient(90deg,#5800e7,#e90000);
+  background: url(asset_path("bp-home.png")), linear-gradient(90deg,#5800e7,#e90000);
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -49,7 +49,7 @@ section.bp-home {
   min-width: 100%;
   min-height: 200px;
   position: absolute;
-  background: url(https://www.bukanprogrammer.com/resources/images/cloud.png);
+  background: url(asset_path("cloud.png"));
   bottom: -50px;
 }
 
@@ -69,7 +69,7 @@ a.btn-rounded {
 section.bp-page {
   width: 100%;
   height: 350px;
-  background: url(https://www.bukanprogrammer.com/resources/images/bp-article.png), linear-gradient(90deg,#5800e7,#e90000);
+  background: url(asset_path("bp-article.png")), linear-gradient(90deg,#5800e7,#e90000);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
