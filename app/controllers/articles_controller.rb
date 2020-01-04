@@ -37,8 +37,8 @@ class ArticlesController < ApplicationController
     prepare_meta_tags(title: @article.title,
                       description: @article.content,
                       keywords: @article.tags.map{|t| t.name },
-                      og: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content},
-                      twitter: {title: @article.title, image: request.base_url + "#{@article.image_feature}", description: @article.content, card: 'summary_large_image'},
+                      og: {title: @article.title, image: request.base_url + "#{@article.image}", description: @article.content},
+                      twitter: {title: @article.title, image: request.base_url + "#{@article.image}", description: @article.content, card: 'summary_large_image'},
                      )
   end
 
@@ -148,6 +148,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :image_feature, :category_id, :publish, :user_id, :send_to_subscribers, :sent_to_subscribers, :all_tags)
+      params.require(:article).permit(:title, :content, :image, :category_id, :publish, :user_id, :send_to_subscribers, :sent_to_subscribers, :all_tags)
     end
 end
