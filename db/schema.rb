@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_065624) do
+ActiveRecord::Schema.define(version: 2020_01_05_132716) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_01_04_065624) do
     t.column "sent_to_subscribers", "enum('y','n')", default: "n", null: false
     t.column "send_to_subscribers", "enum('y','n')", default: "n", null: false
     t.string "slug"
+    t.text "description", default: "'Tutorial menarik seputar programming - BukanProgrammer.com'"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
