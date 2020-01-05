@@ -78,7 +78,7 @@ $(document).on('turbolinks:load', function () {
   tinymce.remove();
 
   tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
+    selector: "#content",  // change this value according to your HTML
     plugins: "fullscreen code link advlist lists quickbars",
     toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
   });
