@@ -11,9 +11,6 @@ class ArticleMailer < ApplicationMailer
     
     emails.each do |email|
       new_request(email,row).deliver_now
-      # or
-      #new_request(email,row).deliver_later
-      
     end
   end
 
