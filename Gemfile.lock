@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 9171763d197bdd814fafaff0278712b2aed4d737
+  revision: 031763ab5c199121a0cb814649543cce9af53ea8
   specs:
     actioncable (6.1.0.alpha)
       actionpack (= 6.1.0.alpha)
@@ -157,10 +157,10 @@ GEM
     ffi (1.11.3)
     friendly_id (5.3.0)
       activerecord (>= 4.0.0)
-    geocoder (1.5.2)
+    geocoder (1.6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.7.0)
+    i18n (1.7.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     jbuilder (2.9.1)
@@ -198,7 +198,7 @@ GEM
     nprogress-rails (0.2.0.2)
     orm_adapter (0.5.0)
     popper_js (1.14.5)
-    public_suffix (4.0.2)
+    public_suffix (4.0.3)
     puma (4.3.1)
       nio4r (~> 2.0)
     punching_bag (0.7.0)
