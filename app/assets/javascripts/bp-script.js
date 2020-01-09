@@ -22,7 +22,6 @@ $(document).ready(function() {
         }
     }
 	} );
-
 });
 
 $(document).on('turbolinks:load', function () {
@@ -82,5 +81,16 @@ $(document).on('turbolinks:load', function () {
     plugins: "fullscreen code link advlist lists quickbars",
     toolbar: "bold italic  link image  alignleft aligncenter alignright  alignjustify bullist numlist outdent indent code",
   });
+
+  // Remove all global properties set by addthis, otherwise it won't reinitialize
+  for (var i in window) {
+    if (/^addthis/.test(i) || /^_at/.test(i)) {
+      delete window[i];
+    }
+  }
+  window.addthis_share = null;
+
+  // Finally, load addthis
+  $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e16a9104844e7db");
 
 });
