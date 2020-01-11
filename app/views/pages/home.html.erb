@@ -1,5 +1,6 @@
 <main class="shadow-sm">
   <%= render '../views/pages/home/jumbotron_section' %>
+  <%= render 'layouts/adsense_horizontal' %>
   <%= render '../views/pages/home/category_section' %>
   <div class="container">
     <h1 class="h2 mt-3 font-weight-bold"><strong>Artikel</strong></h1>
@@ -8,6 +9,7 @@
         <%= render '../views/pages/home/article_section' %>
       </div>
       <div class="col-md-3">
+        <%= render 'layouts/adsense_vertical' %>
         <%= render 'layouts/global_sidebar' %>
       </div>
     </div>
